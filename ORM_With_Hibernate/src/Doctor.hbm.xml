@@ -27,13 +27,13 @@
     		<property name="city" column= "CLINICCITY"></property>
    	  		<property name="pinCode" column= "CLINICPINCODE"></property>
         </component>
-        <set name="patientList" table="PATIENT" inverse="false" lazy="true" cascade= "all">
+        <set name="patientList" table="PATIENT" inverse="false" lazy="true"  cascade= "all" >
             <key>
                 <column name="DOCTORCODE" />
             </key>
             <one-to-many class="com.training.entity.Patient" />
         </set>
-        <many-to-one name="assistant" class="com.training.entity.ClinicalAssistant" fetch="join">
+        <many-to-one name="assistant" class="com.training.entity.ClinicalAssistant" fetch="join" cascade= "all">
             <column name="ASSISTANT" />
         </many-to-one>
     </class>
